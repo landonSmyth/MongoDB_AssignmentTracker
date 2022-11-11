@@ -1,0 +1,47 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Main Content -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+                <h1><%= title %></h1>
+                <a href="/book-list/add" class="btn btn-primary" role="button">
+                <i fas fa-plus-circle></i>Add a Book</a>
+                <br>
+                <br>
+                <table class="table table-bordered table-striped table-hover">
+                <tr class="flex">
+                <th class="text-center col-1">Name</th>
+                <th class="text-center col-1">Author</th>
+                <th class="text-center col-1">Published</th>
+                <th class="text-center col-4">Description</th>
+                <th class="text-center col-1">Price</th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
+                </tr>
+                <!-- Repeat the template --> 
+                <% for(let count=0; count<Booklist.length; count++) { %>
+                    <tr class="flex">
+                    <td class="text-center col-1"><%= Booklist[count].name %></td>
+                    <td class="text-center col-1"><%= Booklist[count].author %></td>
+                    <td class="text-center col-1"><%= Booklist[count].published %></td>
+                    <td class="text-center col-4"><%= Booklist[count].description %></td>
+                    <td class="text-center col-1"><%= Booklist[count].price %></td>
+                    <td class="text-center col-1">
+                    <a href="/book-list/edit/<%= Booklist[count]._id %>" class="btn btn-primary">
+                        <i fas fa-pencil-alt></i>Edit</a></td>
+                    <td class="text-center col-1">
+                    <a href="/book-list/delete/<%= Booklist[count]._id %>" class="btn btn-primary">
+                        <i fas fa-pencil-alt></i>Delete</a></td>
+                    </tr>
+                <% } %>
+                </table>
+            </div>
+        </div> 
+    </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
