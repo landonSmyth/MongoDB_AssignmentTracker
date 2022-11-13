@@ -8,7 +8,7 @@ const assignmentData = require('../models/assignments');
 let Assignment = require('../models/assignments');
 
 // Read operation
-// Get route for the book list
+// Get route for the assignment tracker
 router.get('/', assignmentController.displayAssignments);
 
 // Add operation, perform get and post 

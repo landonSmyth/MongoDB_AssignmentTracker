@@ -14,8 +14,8 @@ module.exports.displayAssignments = (req, res, next)=>{
         }
         else 
         {
-            res.render('assignments/list',{
-                title:'Assignments & Homework', 
+            res.render('assignments/tracker',{
+                title:'Tracker',
                 AssignmentList: assignmentList
             })
         }

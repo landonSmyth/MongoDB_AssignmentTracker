@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 //Create a book model 
-let bookModel = mongoose.Schema({
+let assignmentModel = mongoose.Schema({
     courseCode: String,
     dueDate: String,
     description: String, 
