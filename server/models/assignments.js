@@ -8,7 +8,7 @@ let assignmentModel = mongoose.Schema({
     groupMembers: Number
     },
     {
-        collection: "assignments&homework"
+        collection: "assignments_homework"
     }
 );
 module.exports = mongoose.model('Assignments', assignmentModel);

@@ -8,32 +8,33 @@
             <div class="col-md-offset-3 col-md-11">
                 <br>
                 <h1>Your Assingments & Homework</h1>
-                <a href="/book-list/add" class="btn btn-primary" role="button">
+                <a href="/assignment-tracker/add" class="btn btn-primary" role="button">
                 <i fas fa-plus-circle></i>Add Homework or Assignment</a>
                 <br>
                 <br>
                 <table class="table table-bordered table-striped table-hover">
                 <tr class="flex">
-                <th class="text-center col-1">Course Code</th>
-                <th class="text-center col-1">Due Date</th>
-                <th class="text-center col-4">Description</th>
-                <th class="text-center col-3">Requirements</th>
-                <th class="text-center col-2">Group Members</th>
+                    <th class="text-center col-1">Course Code</th>
+                    <th class="text-center col-1">Due Date</th>
+                    <th class="text-center col-4">Description</th>
+                    <th class="text-center col-3">Requirements</th>
+                    <th class="text-center col-2">Group Members</th>
                 </tr>
                 <!-- Repeat the template --> 
                 <% for(let count=0; count<AssignmentList.length; count++) { %>
                     <tr class="flex">
-                    <td class="text-center col-1"><%= AssignmentList[count].name %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].author %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].published %></td>
-                    <td class="text-center col-4"><%= AssignmentList[count].description %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].price %></td>
+                    <td class="text-center col-1"><%= AssignmentList[count].courseCode %></td>
+                    <td class="text-center col-1"><%= AssignmentList[count].dueDate %></td>
+                    <td class="text-center col-1"><%= AssignmentList[count].description %></td>
+                    <td class="text-center col-4"><%= AssignmentList[count].requirements %></td>
+                    <td class="text-center col-1"><%= AssignmentList[count].groupMembers %></td>
                     <td class="text-center col-1">
-                    <a href="/book-list/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary">
-                        <i fas fa-pencil-alt></i>Edit</a></td>
+                    <a href="/assignment-tracker/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary">
+                        <i class="fa-solid fa-pen-clip"></i>Edit</a></td>
                     <td class="text-center col-1">
-                    <a href="/book-list/delete/<%= AssignmentList[count]._id %>" class="btn btn-primary">
-                        <i fas fa-pencil-alt></i>Delete</a></td>
+                    <a href="/assignment-tracker/delete/<%= AssignmentList[count]._id %>" 
+                    class="btn" style="background-color: red; color: black">
+                        <i class="fa-solid fa-trash-can"></i>Delete</a></td>
                     </tr>
                 <% } %>
                 </table>
