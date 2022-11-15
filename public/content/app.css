@@ -6,15 +6,11 @@
 }
 
 body {
-    background-color: rgb(11, 164, 215) !important;
+    background-color: rgb(45, 212, 235) !important;
 }
 
 #whole_page {
     width: 100%;
-}
-
-section {
-    margin: 40px;
 }
  
 article h1,h2 {
@@ -22,6 +18,15 @@ article h1,h2 {
     text-align: center;
     padding: 10px;
     animation: fade-in 1s 1;
+}
+
+
+#addEdit-header {
+    margin-top: 4% !important;
+}
+
+#tracker-header h1{
+    margin-top: 0% !important;
 }
 
 @keyframes fade-in 
@@ -46,4 +51,15 @@ article h1,h2 {
 
 textarea {
     resize: none !important;
+}
+
+/*Formatting for tracker view*/ 
+h3 {
+    animation: fade-in 1.7s 1 !important;
+}
+
+@keyframes pulse {
+    0% {opacity: 0.5;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.5;}
 }

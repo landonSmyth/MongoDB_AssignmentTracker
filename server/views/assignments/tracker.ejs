@@ -7,37 +7,47 @@
         <div class="row">
             <div class="col-md-offset-3 col-md-11">
                 <br>
-                <h1>Your Assingments & Homework</h1>
-                <a href="/assignment-tracker/add" class="btn btn-primary" role="button">
-                <i fas fa-plus-circle></i>Add Homework or Assignment</a>
-                <br>
-                <br>
-                <table class="table table-bordered table-striped table-hover">
-                <tr class="flex">
-                    <th class="text-center col-1">Course Code</th>
-                    <th class="text-center col-1">Due Date</th>
-                    <th class="text-center col-4">Description</th>
-                    <th class="text-center col-3">Requirements</th>
-                    <th class="text-center col-2">Group Members</th>
-                </tr>
-                <!-- Repeat the template --> 
-                <% for(let count=0; count<AssignmentList.length; count++) { %>
-                    <tr class="flex">
-                    <td class="text-center col-1"><%= AssignmentList[count].courseCode %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].dueDate %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].description %></td>
-                    <td class="text-center col-4"><%= AssignmentList[count].requirements %></td>
-                    <td class="text-center col-1"><%= AssignmentList[count].groupMembers %></td>
-                    <td class="text-center col-1">
-                    <a href="/assignment-tracker/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary">
-                        <i class="fa-solid fa-pen-clip"></i>Edit</a></td>
-                    <td class="text-center col-1">
-                    <a href="/assignment-tracker/delete/<%= AssignmentList[count]._id %>" 
-                    class="btn" style="background-color: red; color: black">
-                        <i class="fa-solid fa-trash-can"></i>Delete</a></td>
-                    </tr>
+                <h1 id="tracker-header">Your Assingments & Homework</h1>
+                <% if (AssignmentList.length==0){ %>
+                    <br>
+                    <a href="/assignment-tracker/add" class="btn btn-primary" style="animation: pulse 1.5s infinite">
+                    <i class="fa-regular fa-square-plus"></i> Add Homework or Assignment</a>
+                    <br>
+                    <br>
+                    <h3>Your list is currently empty <br>Click "Add homework or assignment" to begin</h3>
+                <% } else { %> 
+                    <a href="/assignment-tracker/add" class="btn btn-primary">
+                    <i class="fa-regular fa-square-plus"></i> Add Homework or Assignment</a>
+                    <br>
+                    <br>    
+                    <table class="table table-bordered table-striped table-hover">
+                        <tr class="flex">
+                            <th class="text-center col-1">Course Code</th>
+                            <th class="text-center col-1">Due Date</th>
+                            <th class="text-center col-4">Description</th>
+                            <th class="text-center col-3">Requirements</th>
+                            <th class="text-center col-2">Group Members</th>
+                        </tr>
+                        <!-- Repeat the template --> 
+                        <% for(let count=0; count<AssignmentList.length; count++) { %>
+                            <tr class="flex">
+                            <td class="text-center col-1"><%= AssignmentList[count].courseCode %></td>
+                            <td class="text-center col-1"><%= AssignmentList[count].dueDate %></td>
+                            <td class="text-center col-1"><%= AssignmentList[count].description %></td>
+                            <td class="text-center col-4"><%= AssignmentList[count].requirements %></td>
+                            <td class="text-center col-1"><%= AssignmentList[count].groupMembers %></td>
+                            <td class="text-center col-1">
+                            <a href="/assignment-tracker/edit/<%= AssignmentList[count]._id %>" class="btn btn-primary"
+                            style="color: white">
+                                <i class="fa-solid fa-pen-clip"></i>Edit</a></td>
+                            <td class="text-center col-1">
+                            <a href="/assignment-tracker/delete/<%= AssignmentList[count]._id %>" 
+                            class="btn" style="background-color: rgba(183, 9, 9, 0.919); color: white">
+                                <i class="fa-solid fa-trash-can"></i>Delete</a></td>
+                            </tr>
+                        <% } %>
+                    </table>
                 <% } %>
-                </table>
             </div>
         </div> 
     </div>

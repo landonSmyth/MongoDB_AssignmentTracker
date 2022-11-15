@@ -17,6 +17,8 @@ mongoDB.once('open', ()=> {
   console.log('connected to the mongoDB');
 });
 
+let test3 = 1234
+
 //routing lines 
 let indexRouter = require('../routes/index');
 let assignmentsRouter = require('../routes/assignments');
