@@ -8,6 +8,9 @@
             <div class="col-md-offset-3 col-md-11">
                 <br>
                 <h1 id="tracker-header">Your Assingments & Homework</h1>
+                <!--Decision structure to determine if DB is empty
+                If the DB is empty, do not display the table and prompt the user to add an assignment
+                If the DB is not empty, display the table containing their assignment entries-->
                 <% if (AssignmentList.length==0){ %>
                     <br>
                     <a href="/assignment-tracker/add" class="btn btn-primary" style="animation: pulse 1.5s infinite">
@@ -28,7 +31,6 @@
                             <th class="text-center col-3">Requirements</th>
                             <th class="text-center col-2">Group Members</th>
                         </tr>
-                        <!-- Repeat the template --> 
                         <% for(let count=0; count<AssignmentList.length; count++) { %>
                             <tr class="flex">
                             <td class="text-center col-1"><%= AssignmentList[count].courseCode %></td>
@@ -42,7 +44,7 @@
                                 <i class="fa-solid fa-pen-clip"></i>Edit</a></td>
                             <td class="text-center col-1">
                             <a href="/assignment-tracker/delete/<%= AssignmentList[count]._id %>" 
-                            class="btn" style="background-color: rgba(183, 9, 9, 0.919); color: white">
+                            class="btn" style="background-color: rgba(183, 9, 9, 0.919); color: white" id="delButton">
                                 <i class="fa-solid fa-trash-can"></i>Delete</a></td>
                             </tr>
                         <% } %>

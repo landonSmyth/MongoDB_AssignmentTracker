@@ -59,4 +59,5 @@ app.use(function(err, req, res, next) {
   );
 });
 
+//Making the applictaion variables public for the whole program
 module.exports = app;

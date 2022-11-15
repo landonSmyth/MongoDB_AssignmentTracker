@@ -6,10 +6,12 @@
     function Start()
     {
         console.log("Application Started");
-        let deleteButton = document.querySelectorAll('.btn-danger');
-    for(button of deleteButton)
+        let deleteButton = document.querySelectorAll('#delButton');
+        //Delete confirmation function 
+        for(button of deleteButton)
     {
         button.addEventListener('click', (event)=>{
+            //Prompts the user to confirm that they wish to delete the entry 
             if(!confirm("Are you sure?"))
             {
                 event.preventDefault();
